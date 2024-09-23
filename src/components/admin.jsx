@@ -77,6 +77,8 @@ export default function AdminDashboard() {
                       <TableHead>ID</TableHead>
                       <TableHead>Name</TableHead>
                       <TableHead>Email</TableHead>
+                      <TableHead>Department</TableHead>
+                      <TableHead>Batch</TableHead>
                       <TableHead>Actions</TableHead>
                     </TableRow>
                   </TableHeader>
