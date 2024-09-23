@@ -84,14 +84,16 @@ export default function AdminDashboard() {
                   </TableHeader>
                   <TableBody>
                     {[
-                      { id: "ST001", name: "Alice Johnson", email: "alice@example.com" },
-                      { id: "ST002", name: "Bob Smith", email: "bob@example.com" },
-                      { id: "ST003", name: "Charlie Brown", email: "charlie@example.com" },
+                      { id: "ST001", name: "Alice Johnson", email: "alice@example.com", department: "Computer Science", batch: "2022" },  
+                      { id: "ST002", name: "Bob Smith", email: "bob@example.com", department: "Mathematics", batch: "2021" },
+                      { id: "ST003", name: "Charlie Brown", email: "charlie@example.com", department: "Physics", batch: "2020" },
                     ].map((student) => (
                       <TableRow key={student.id}>
                         <TableCell>{student.id}</TableCell>
                         <TableCell>{student.name}</TableCell>
                         <TableCell>{student.email}</TableCell>
+                        <TableCell>{student.department}</TableCell>
+                        <TableCell>{student.batch}</TableCell>
                         <TableCell>
                           <Button variant="ghost" size="icon">
                             <Edit className="h-4 w-4" />
