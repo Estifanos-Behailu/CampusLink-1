@@ -78,28 +78,32 @@ export default function AdminDashboard() {
                                             <TableHead>ID</TableHead>
                                             <TableHead>Name</TableHead>
                                             <TableHead>Email</TableHead>
+                                            <TableHead>Department</TableHead>
+                                            <TableHead>Batch</TableHead>
                                             <TableHead>Actions</TableHead>
                                         </TableRow>
                                     </TableHeader>
                                     <TableBody>
                                         {[
-                                            { id: "ST001", name: "Alice Johnson", email: "alice@example.com" },
-                                            { id: "ST002", name: "Bob Smith", email: "bob@example.com" },
-                                            { id: "ST003", name: "Charlie Brown", email: "charlie@example.com" },
+                                        { id: "ST001", name: "Alice Johnson", email: "alice@example.com", department: "Computer Science", batch: "2022" },  
+                                        { id: "ST002", name: "Bob Smith", email: "bob@example.com", department: "Mathematics", batch: "2021" },
+                                        { id: "ST003", name: "Charlie Brown", email: "charlie@example.com", department: "Physics", batch: "2020" },
                                         ].map((student) => (
-                                            <TableRow key={student.id}>
-                                                <TableCell>{student.id}</TableCell>
-                                                <TableCell>{student.name}</TableCell>
-                                                <TableCell>{student.email}</TableCell>
-                                                <TableCell>
-                                                    <Button variant="ghost" size="icon">
-                                                        <Edit className="h-4 w-4" />
-                                                    </Button>
-                                                    <Button variant="ghost" size="icon">
-                                                        <Trash2 className="h-4 w-4" />
-                                                    </Button>
-                                                </TableCell>
-                                            </TableRow>
+                                        <TableRow key={student.id}>
+                                            <TableCell>{student.id}</TableCell>
+                                            <TableCell>{student.name}</TableCell>
+                                            <TableCell>{student.email}</TableCell>
+                                            <TableCell>{student.department}</TableCell>
+                                            <TableCell>{student.batch}</TableCell>
+                                            <TableCell>
+                                            <Button variant="ghost" size="icon">
+                                                <Edit className="h-4 w-4" />
+                                            </Button>
+                                            <Button variant="ghost" size="icon">
+                                                <Trash2 className="h-4 w-4" />
+                                            </Button>
+                                            </TableCell>
+                                        </TableRow>
                                         ))}
                                     </TableBody>
                                 </Table>
@@ -115,16 +119,7 @@ export default function AdminDashboard() {
                             </CardHeader>
                             <CardContent>
                                 <div className="flex justify-between items-center mb-4">
-                                    <Select>
-                                        <SelectTrigger className="w-[180px]">
-                                            <SelectValue placeholder="Select Course" />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="cs101">CS101: Intro to Programming</SelectItem>
-                                            <SelectItem value="math201">MATH201: Calculus II</SelectItem>
-                                            <SelectItem value="eng102">ENG102: Composition</SelectItem>
-                                        </SelectContent>
-                                    </Select>
+                                    
                                     <Button>Save Changes</Button>
                                 </div>
                                 <Table>
@@ -132,6 +127,7 @@ export default function AdminDashboard() {
                                         <TableRow>
                                             <TableHead>Student ID</TableHead>
                                             <TableHead>Name</TableHead>
+                                            <TableHead>Course</TableHead>
                                             <TableHead>Current Grade</TableHead>
                                             <TableHead>New Grade</TableHead>
                                         </TableRow>
@@ -145,6 +141,18 @@ export default function AdminDashboard() {
                                             <TableRow key={student.id}>
                                                 <TableCell>{student.id}</TableCell>
                                                 <TableCell>{student.name}</TableCell>
+                                                <TableCell>
+                                                    <Select>
+                                                        <SelectTrigger>
+                                                            <SelectValue placeholder="Select course" />
+                                                        </SelectTrigger>
+                                                        <SelectContent>
+                                                            <SelectItem value="cs101">CS101: Intro to Programming</SelectItem>
+                                                            <SelectItem value="math201">MATH201: Calculus II</SelectItem>
+                                                            <SelectItem value="eng102">ENG102: Composition</SelectItem>
+                                                        </SelectContent>
+                                                    </Select>
+                                                </TableCell>
                                                 <TableCell>{student.currentGrade}</TableCell>
                                                 <TableCell>
                                                     <Select>
